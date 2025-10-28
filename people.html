@@ -1,0 +1,512 @@
+---
+layout: default
+title: People
+---
+
+<div class="people-page">
+  <h1>People</h1>
+  
+  <!-- 教授部分 -->
+  <section class="people-section">
+    <h2>Faculty Members</h2>
+    <div class="people-list">
+      {% for member in site.data.members %}
+        {% if member.role == "教授" %}
+          <div class="person-entry">
+            <div class="person-photo">
+              <img src="{{ member.avatar }}" alt="{{ member.name }}" loading="lazy">
+            </div>
+            <div class="person-details">
+              <div class="name-section">
+                <span class="person-name">{{ member.name }}</span>
+                <span class="social-icons">
+                  {% if member.personal_page %}
+                    <a href="{{ member.personal_page }}" target="_blank" title="Personal Page" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V4H3z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                  
+                  {% if member.google_scholar %}
+                    <a href="{{ member.google_scholar }}" target="_blank" title="Google Scholar" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M16 4c.55 0 1 .45 1 1v1H7V5c0-.55.45-1 1-1h8zM8 10h3v8H8v-8zm6 0h3v8h-3v-8z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                  
+                  {% if member.github_page %}
+                    <a href="{{ member.github_page }}" target="_blank" title="GitHub" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                  
+                  {% if member.email %}
+                    <a href="mailto:{{ member.email }}" target="_blank" title="Email" class="social-icon email-icon" data-email="{{ member.email }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                </span>
+              </div>
+              <div class="bio-section">
+                {{ member.bio }}
+              </div>
+              <div class="email-section">
+                Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+
+
+  <!-- 在读博士生 -->
+  <section class="people-section">
+    <h2>PhD Students</h2>
+    <div class="people-list">
+      {% assign sorted_phd = site.data.members | where: "role", "博士生" | sort: "year" %}
+      {% for member in sorted_phd %}
+        <div class="person-entry">
+          <div class="person-photo">
+            <img src="{{ member.avatar }}" alt="{{ member.name }}" loading="lazy">
+          </div>
+          <div class="person-details">
+            <div class="name-section">
+              <span class="person-name">{{ member.name }}{% if member.co_advised %} (Co-advised with {{ member.co_advised }}){% endif %}</span>
+              <span class="social-icons">
+                {% if member.personal_page %}
+                  <a href="{{ member.personal_page }}" target="_blank" title="Personal Page" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V4H3z"/>
+                    </svg>
+                  </a>
+                {% endif %}
+                
+                {% if member.google_scholar %}
+                  <a href="{{ member.google_scholar }}" target="_blank" title="Google Scholar" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                      <path d="M16 4c.55 0 1 .45 1 1v1H7V5c0-.55.45-1 1-1h8zM8 10h3v8H8v-8zm6 0h3v8h-3v-8z"/>
+                    </svg>
+                  </a>
+                {% endif %}
+                
+                {% if member.github_page %}
+                    <a href="{{ member.github_page }}" target="_blank" title="GitHub" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                  
+                  {% if member.email %}
+                    <a href="mailto:{{ member.email }}" target="_blank" title="Email" class="social-icon email-icon" data-email="{{ member.email }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                </span>
+            </div>
+            <div class="bio-section">
+              {{ member.bio }}
+            </div>
+            <div class="email-section">
+                Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+              </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- 硕士研究生 -->
+  <section class="people-section">
+    <h2>Master Students</h2>
+    <div class="people-list">
+      {% assign sorted_master = site.data.members | where: "role", "硕士生" | sort: "year" %}
+      {% for member in sorted_master %}
+        <div class="person-entry">
+          <div class="person-photo">
+            <img src="{{ member.avatar }}" alt="{{ member.name }}" loading="lazy">
+          </div>
+          <div class="person-details">
+            <div class="name-section">
+              <span class="person-name">{{ member.name }}</span>
+              <span class="social-icons">
+                {% if member.personal_page %}
+                  <a href="{{ member.personal_page }}" target="_blank" title="Personal Page" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                      <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V4H3z"/>
+                    </svg>
+                  </a>
+                {% endif %}
+                
+                {% if member.google_scholar %}
+                  <a href="{{ member.google_scholar }}" target="_blank" title="Google Scholar" class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                      <path d="M16 4c.55 0 1 .45 1 1v1H7V5c0-.55.45-1 1-1h8zM8 10h3v8H8v-8zm6 0h3v8h-3v-8z"/>
+                    </svg>
+                  </a>
+                {% endif %}
+                
+                {% if member.github_page %}
+                    <a href="{{ member.github_page }}" target="_blank" title="GitHub" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                  
+                  {% if member.email %}
+                    <a href="mailto:{{ member.email }}" target="_blank" title="Email" class="social-icon email-icon" data-email="{{ member.email }}">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                </span>
+            </div>
+            <div class="bio-section">
+              {{ member.bio }}
+            </div>
+            <div class="email-section">
+                Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+              </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- 校友 -->
+  <section class="people-section">
+    <h2>Alumni</h2>
+    <div class="people-list">
+      {% assign sorted_alumni = site.data.members | where: "role", "校友" | sort: "graduation_year" | reverse %}
+      {% for member in sorted_alumni %}
+        <div class="person-entry">
+          <div class="person-photo">
+            <img src="{{ member.avatar }}" alt="{{ member.name }}" loading="lazy">
+          </div>
+          <div class="person-details">
+            <div class="name-section">
+              <span class="person-name">{{ member.name }} ({{ member.graduation_year }}年毕业)</span>
+              <span class="social-icons">
+                {% if member.personal_page %}
+                    <a href="{{ member.personal_page }}" target="_blank" title="Personal Page" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V4H3z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                
+                {% if member.google_scholar %}
+                    <a href="{{ member.google_scholar }}" target="_blank" title="Google Scholar" class="social-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                        <path d="M16 4c.55 0 1 .45 1 1v1H7V5c0-.55.45-1 1-1h8zM8 10h3v8H8v-8zm6 0h3v8h-3v-8z"/>
+                      </svg>
+                    </a>
+                  {% endif %}
+                
+                {% if member.github_page %}
+                      <a href="{{ member.github_page }}" target="_blank" title="GitHub" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                      </a>
+                    {% endif %}
+                  
+                  {% if member.email %}
+                      <a href="mailto:{{ member.email }}" target="_blank" title="Email" class="social-icon email-icon" data-email="{{ member.email }}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="white">
+                          <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                      </a>
+                    {% endif %}
+                </span>
+            </div>
+            <div class="position-section">
+              {{ member.current_position }}
+            </div>
+            <div class="bio-section">
+              {{ member.bio }}
+            </div>
+            <div class="email-section">
+                Email: <a href="mailto:{{ member.email }}">{{ member.email }}</a>
+              </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+</div>
+
+<style>
+.people-page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* 主标题样式通过全局_typography.scss应用 */
+/* .people-page h1 {
+    font-size: 1.43rem;
+    font-weight: 630;
+    margin-bottom: 2rem;
+    color: #000000;
+    text-align: left;
+    letter-spacing: -0.02em;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  } */
+
+  .people-section {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;    /* 设置底部内边距，确保横线与内容有足够间距 */
+    /* border-bottom: 1px solid #e1f0ff;    创建一个1像素宽的浅蓝色边框 */
+  }
+
+  .people-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .people-section h2 {
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 1.25rem 0;
+    color: #000000;
+    border-bottom: 2px solid #e1f0ff;      /* 创建一个2像素宽的浅蓝色边框 */
+    padding-bottom: 0.5rem;     /*设置标题底部内边距，给横线留出适当空间*/
+    letter-spacing: 0.03em;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; */
+    font-family: "TeXGyrePagella","Merriweather","PT Serif",Georgia,"Times New Roman",serif;
+  }
+
+.people-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .person-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;    /* 控制照片和个人信息之间的水平距离 */
+    padding: 0.625rem;     /* 容器内边距, 增加条目内部的空白区域。 0.8125rem */
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+  }
+
+  .person-entry:hover {
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.1);
+    transform: translateY(-1.5px);     /* 调整悬停时的浮动距离 */
+  }
+
+.person-photo {
+  flex-shrink: 0;
+}
+
+.person-photo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e1f0ff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+  }
+
+.person-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.name-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+    flex-wrap: nowrap;
+  }
+
+  .person-name {
+    font-size: 0.936rem;
+    font-weight: 700;
+    color: #0056b3;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 0.375rem;
+    flex-shrink: 0;
+    margin-top: -10px;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: #0056b3;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    border: none;
+  }
+
+  .social-icon:hover {
+    background: #004085;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: white;
+    stroke: none;
+  }
+
+.position-section {
+    font-size: 0.8125rem;
+    color: #000000;
+    margin-bottom: 0.625rem;
+    font-style: italic;
+  }
+
+  .bio-section {
+    font-size: 0.75rem;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 0.625rem;
+  }
+
+  .email-section {
+    font-size: 0.6875rem;
+    color: #000000;
+    /*  display: none; /* 隐藏文字版邮箱，使用图标代替 */
+  }
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .people-page {
+      padding: 1.5rem 0.75rem;
+    }
+    
+    .people-page h1 {
+      font-size: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    
+    .people-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .person-entry {
+      flex-direction: column;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+    
+    .person-photo {
+      align-self: flex-start;
+    }
+    
+    .person-photo img {
+      width: 70px;
+      height: 70px;
+    }
+    
+    .name-section {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+  .people-page h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.75rem;
+  }
+  
+  .people-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .person-photo img {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .person-name {
+    font-size: 1rem;
+  }
+  
+  .person-entry {
+    padding: 1rem;
+  }
+}
+
+/* 邮箱图标样式 */
+.email-icon {
+    position: relative;
+}
+
+.email-icon:hover::after {
+    content: attr(data-email);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #5288c3;
+    color: #ffffff;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 0.4rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.01em;
+    line-height: 1.3;
+    text-shadow: none;
+}
+
+.email-icon:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #5288c3;
+    z-index: 1000;
+    margin-bottom: -0.125rem;
+}
+
+
+</style>

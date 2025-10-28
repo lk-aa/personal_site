@@ -1,0 +1,18 @@
+# # 实验室网站导航配置
+# - title: 首页
+#   url: /
+
+# - title: 人员
+#   url: /people.html
+
+# - title: 研究
+#   url: /research.html
+
+# - title: 出版物
+#   url: /publications.html
+
+# - title: 照片
+#   url: /photos.html
+
+# - title: 联系
+#   url: /contact.html

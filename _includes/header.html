@@ -1,0 +1,21 @@
+<!-- <!DOCTYPE html> -->
+<header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <!-- <a href="{{ "/" | relative_url }}" class="site-title">{{ site.title }}</a> -->
+      <!-- &lt;a href="{{ "/" | relative_url }}" class="site-title"&gt;
+        &lt;img src="{{ "/images/logo.png" | relative_url }}" alt="{{ site.title }}" class="site-logo"&gt;
+      &lt;/a&gt; -->
+      <a href="{{ "/" | relative_url }}" class="site-title">
+        <img src="{{ "/images/logo.png" | relative_url }}" alt="{{ site.title }}" class="site-logo">
+      </a>
+      <nav class="site-nav">
+        {% include navigation.html %}
+      </nav>
+      <div class="clearfix"></div>
+      {% if site.show_social_icons %}
+        {% include social_links.html %}
+      {% endif %}
+    </div>
+  </div>
+</header>

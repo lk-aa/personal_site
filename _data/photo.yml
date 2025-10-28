@@ -1,0 +1,145 @@
+photos:
+  - id: 1
+    image: "/images/photo_img/1.jpg"
+    description: "实验室团队在2月份的团队建设活动中合影留念"
+  - id: 2
+    image: "/images/photo_img/2.jpg"
+    description: "团队成员在进行学术论文讨论和研究进展分享"
+  - id: 3
+    image: "/images/photo_img/3.jpg"
+    description: "研究人员正在调试最新的实验设备"
+  - id: 4
+    image: "/images/photo_img/4.jpg"
+    description: "为新加入的团队成员举行的欢迎仪式"
+  - id: 5
+    image: "/images/photo_img/5.jpg"
+    description: "团队成员向访问学者展示研究项目成果"
+  - id: 6
+    image: "/images/photo_img/6.jpg"
+    description: "团队内部举办的编程竞赛活动"
+  - id: 7
+    image: "/images/photo_img/7.jpg"
+    description: "向本科生和高中生展示实验室工作"
+  - id: 8
+    image: "/images/photo_img/8.jpg"
+    description: "与国际合作伙伴进行远程项目讨论"
+  - id: 9
+    image: "/images/photo_img/9.jpg"
+    description: "在学术会议上展示最新研究成果"
+  - id: 10
+    image: "/images/photo_img/10.jpg"
+    description: "庆祝项目阶段性成功的团队聚餐"
+  - id: 11
+    image: "/images/photo_img/11.jpg"
+    description: "团队成员共同优化关键算法性能"
+  - id: 12
+    image: "/images/photo_img/12.jpg"
+    description: "为博士生毕业答辩进行的模拟演练"
+  - id: 13
+    image: "/images/photo_img/13.jpg"
+    description: "新实验室空间改造后的合影"
+  - id: 14
+    image: "/images/photo_img/14.jpg"
+    description: "参观合作企业并进行技术交流"
+  - id: 15
+    image: "/images/photo_img/15.jpg"
+    description: "讨论研究成果的专利申请策略"
+  - id: 16
+    image: "/images/photo_img/16.jpg"
+    description: "在高校进行的研究生招生宣传活动"
+  - id: 17
+    image: "/images/photo_img/17.jpg"
+    description: "团队开发的软件系统正式发布"
+  - id: 18
+    image: "/images/photo_img/18.jpg"
+    description: "与其他学科领域专家的合作讨论"
+  - id: 19
+    image: "/images/photo_img/19.jpg"
+    description: "新成员参加实验室安全操作培训"
+  - id: 20
+    image: "/images/photo_img/20.jpg"
+    description: "团队年度工作回顾与总结会议"
+  - id: 21
+    image: "/images/photo_img/21.jpg"
+    description: "团队成员在户外进行的团队建设活动"
+  - id: 22
+    image: "/images/photo_img/22.jpg"
+    description: "举办数据可视化技术工作坊"
+  - id: 23
+    image: "/images/photo_img/23.jpg"
+    description: "邀请国际知名教授进行学术讲座"
+  - id: 24
+    image: "/images/photo_img/24.jpg"
+    description: "新研究项目的正式启动会议"
+  - id: 25
+    image: "/images/photo_img/25.jpg"
+    description: "实验室内部培训"
+    description: "团队成员分享专业技能的内部培训"
+  - id: 26
+    image: "/images/photo_img/26.jpg"
+    title: "科研成果展"
+    description: "在学校科研成果展中展示团队工作"
+  - id: 27
+    image: "/images/photo_img/27.jpg"
+    title: "技术评审会议"
+    description: "对项目进行技术评审和质量控制"
+  - id: 28
+    image: "/images/photo_img/28.jpg"
+    title: "实验室文化建设"
+    description: "讨论和制定实验室文化建设方案"
+  - id: 29
+    image: "/images/photo_img/29.jpg"
+    title: "产学研合作签约"
+    description: "与企业签订产学研合作协议"
+  - id: 30
+    image: "/images/photo_img/30.jpg"
+    title: "团队建设拓展训练"
+    description: "团队成员参加的户外拓展训练活动"
+  - id: 31
+    image: "/images/photo_img/31.jpg"
+    title: "高性能计算集群部署"
+    description: "实验室高性能计算集群的部署和调试"
+  - id: 32
+    image: "/images/photo_img/32.jpg"
+    title: "国际会议参会"
+    description: "团队成员在国际学术会议上的合影"
+  - id: 33
+    image: "/images/photo_img/33.jpg"
+    title: "研究方法研讨会"
+    description: "讨论和改进研究方法的研讨会"
+  - id: 34
+    image: "/images/photo_img/34.jpg"
+    title: "实验室仪器设备"
+    description: "实验室的先进仪器设备展示"
+  - id: 35
+    image: "/images/photo_img/35.jpg"
+    title: "研究生中期考核"
+    description: "研究生进行课题中期进展汇报"
+  - id: 36
+    image: "/images/photo_img/36.jpg"
+    title: "团队篮球友谊赛"
+    description: "与其他实验室进行的篮球友谊赛"
+  - id: 37
+    image: "/images/photo_img/37.jpg"
+    title: "研究伦理培训"
+    description: "科研伦理和学术规范培训"
+  - id: 38
+    image: "/images/photo_img/38.jpg"
+    title: "软件系统架构设计"
+    description: "团队讨论软件系统的架构设计方案"
+  - id: 39
+    image: "/images/photo_img/39.jpg"
+    title: "实验室开放周"
+    description: "实验室向公众开放的科普活动"
+  - id: 40
+    image: "/images/photo_img/40.jpg"
+    title: "团队瑜伽课"
+    description: "为团队成员提供的减压瑜伽课程"
+  - id: 41
+    image: "/images/photo_img/41.jpg"
+    title: "研究数据存储系统"
+    description: "实验室研究数据存储系统的建设"
+  - id: 42
+    image: "/images/photo_img/42.jpg"
+    title: "毕业季留念"
+    description: "送别毕业学生的合影留念"
