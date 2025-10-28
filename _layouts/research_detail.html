@@ -11,7 +11,7 @@ layout: default
       
       {% for area in site.data.research.research_areas %}
       <div class="research-card {% if area.id == page.area_id %}current-area{% endif %}">
-        <a href="/../{{ area.id }}/" class="research-card-link">
+        <a href="/personal_site/research/{{ area.id }}/" class="research-card-link">
           <div class="research-image">
             <img src="{{ area.image }}" alt="{{ area.name }}" loading="lazy">
           </div>
