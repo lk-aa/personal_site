@@ -4,7 +4,7 @@ email:       contact@lab.edu
 author:      实验室团队
 description: "专注于人工智能、机器学习和机器人技术研究的学术实验室"
 baseurl:     "/personal_site"
-url:         "https://lk-aa.github.io/"
+url:         "https://lk-aa.github.io/personal_site/"
 # baseurl:     ""
 # url:         "http://127.0.0.1:4000/"
 date_format: "%Y年%m月%d日"
