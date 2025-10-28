@@ -2,7 +2,7 @@
 layout: research_detail
 title: Foundation Models
 area_id: foundation
-permalink: /research/foundation/
+permalink: /foundation/
 description: "We develop foundation models that enable robots to understand and interact with their environment through scalable learning from diverse datasets."
 content_groups:
   - title: "Vision-Language-Action Models"

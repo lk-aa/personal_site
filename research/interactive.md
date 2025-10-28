@@ -2,7 +2,7 @@
 layout: research_detail
 title: Interactive Learning
 area_id: interactive
-permalink: /research/interactive/
+permalink: /interactive/
 description: "We create algorithms that allow robots to learn new skills rapidly through targeted interactions and human guidance."
 content_groups:
   - title: "Active Learning for Robotics"
