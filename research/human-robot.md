@@ -2,7 +2,7 @@
 layout: research_detail
 title: Human-Robot Collaboration
 area_id: human-robot
-permalink: /human-robot/
+permalink: /research/human-robot/
 description: "We develop frameworks that enable robots to understand human intentions and collaborate seamlessly with people in shared tasks."
 content_groups:
   - title: "Intention Recognition and Prediction"
